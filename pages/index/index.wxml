@@ -1,0 +1,19 @@
+<!--index.wxml-->
+
+<view class="container" style='width:100%; min-height:100%;'>
+ <view class='title'>
+  <text>
+  本小程序
+  用于集体照对号入座智能识别</text>
+ </view>
+
+<view class="btn_start">
+ <button bindtap='go_main' class='btn1'>
+    <view>开启体验</view>
+ </button>
+</view>
+  <view class="usermotto">
+    <text class="user-motto">复旦大学MSE</text>
+  </view>  
+</view>
+ 
