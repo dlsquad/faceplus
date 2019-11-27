@@ -3,6 +3,7 @@
 var time = null;
 var myCanvas = null;
 var windowHeight, windowWidth;
+var register_img = null;
 var type = null;
 Page({
   data: {
@@ -29,6 +30,32 @@ Page({
       }
     })
   },
+  register(){
+    let that = this
+    wx.uploadFile({
+      url: 'http://192.168.0.104:90/face_register',
+      filePath: register_img,
+      name: 'file',
+      header: { "Content-type": "multipart/form-data" },
+      success: function (res) {
+        if(res.data == "success"){
+          that.setData({
+            register_res:"注册成功"
+          })
+        }
+        else{
+          that.setData({
+            register_res: "注册失败"
+          })
+        }
+      },
+      fail:function(res){
+        that.setData({
+          register_res: "注册失败"
+        })
+      }
+    }) 
+  },
   open() {
     this.setData({
       camera: true
@@ -36,7 +63,7 @@ Page({
     type = "takePhoto";
     let ctx = wx.createCameraContext(this)
     let that = this
-    time = setInterval(function () {
+    //time = setInterval(function () {
       if (type == "takePhoto") {
         console.log("begin takephoto")
         ctx.takePhoto({
@@ -44,6 +71,7 @@ Page({
           success: (res) => {
             console.log(res.tempImagePath)
             var tempImagePath = res.tempImagePath
+            register_img = tempImagePath
             wx.uploadFile({
               url: 'http://192.168.0.104:90/upload',
               filePath: tempImagePath,
@@ -85,7 +113,7 @@ Page({
           }
         })
       }
-    }, 1000)
+  //  }, 1000)
   },
   // 关闭模拟的相机界面
   close() {

@@ -31,7 +31,8 @@ Page({
   },
   open() {
     this.setData({
-      camera: true
+      camera: true,
+      login_res:"登录中..."
     })
     type = "takePhoto";
     let ctx = wx.createCameraContext(this)
@@ -45,47 +46,23 @@ Page({
             console.log(res.tempImagePath)
             var tempImagePath = res.tempImagePath
             wx.uploadFile({
-              url: 'http://192.168.0.104:90/upload',
+              url: 'http://192.168.0.104:90/face_login',
               filePath: tempImagePath,
               name: 'file',
               header: { "Content-type": "multipart/form-data" },
               success: function (res) {
-                var im_path = res.data
-                console.log(im_path)
-                wx.request({
-                  url: 'http://192.168.0.104:90/face_detect?url=' + im_path,
-                  method: "GET",
-                  header: { "Content-type": "application/json" },
-                  success: function (res) {
-                    var pos = res.data
-                    pos[0] = parseInt(pos[0] * windowWidth)
-                    pos[1] = parseInt(pos[1] * windowHeight * 0.6)
-                    pos[2] = parseInt(pos[2] * windowWidth)
-                    pos[3] = parseInt(pos[3] * windowHeight * 0.6)
-                    that.setData({
-                      x1: pos[0],
-                      y1: pos[1],
-                      x2: pos[2],
-                      y2: pos[3],
-                    })
-
-                    myCanvas = wx.createCanvasContext("myCanvas")
-                    myCanvas.drawImage(tempImagePath, 0, 0, windowWidth, windowHeight * 0.6)
-                    myCanvas.setStrokeStyle("red")
-                    myCanvas.setLineWidth(5)
-                    myCanvas.rect(pos[0], pos[1], (pos[2] - pos[0]), (pos[3] - pos[1]))
-                    myCanvas.stroke()
-                    myCanvas.draw()
-
-
-                  }
-                })
-              }
-            })
+                if (res.data == "success") {
+                  type = "endPhoto"
+                  that.setData({
+                    login_res: "登录成功"
+                  })
+                }
+              },
+            }) 
           }
         })
       }
-    }, 1000)
+    }, 500)
   },
   // 关闭模拟的相机界面
   close() {

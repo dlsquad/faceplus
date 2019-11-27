@@ -1,0 +1,18 @@
+<view>
+    <button class="first-btn" bindtap="goCreat">创建团体照</button>
+    <button class="btn-line" bindtap="goSearch">我在团体照里</button>
+    <button class="btn-line" bindtap="goPush">我不在团体照里</button>
+    <view class="mask" wx:if="{{isVisible}}">
+        <view class="dialog">
+            <view class="dialog-t">请输入密码</view>
+            <view class="dialog-c">
+                <input type="text" placeholder="请输入密码" />
+            </view>
+            <view class="dialog-b">
+                <view class="btn cancel" bindtap="cancel">取消</view>
+                <view class="btn btn-submit line-btn" bindtap="submit">确定</view>
+                <!-- <navigator wx:if="{{isCloseXcx}} " class="btn btn-submit " open-type="exit " target="miniProgram ">{{submitTxt}}</navigator> -->
+            </view>
+        </view>
+    </view>
+</view>

@@ -6,13 +6,11 @@ Page({
   data: {
     motto: '慕课网',
   },
-
   go_main: function(param){
     wx.navigateTo({
       url: '/pages/main/main'
     })
   },
-
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

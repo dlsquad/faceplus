@@ -1,12 +1,19 @@
 {
   "pages": [
+    "pages/pic_index/pic_index",
+    "pages/pic_index/push_img/index",
+    "pages/pic_index/search_psi/index",
+    "pages/pic_index/create/index",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/face/face_recognition",
+    "pages/face/face_register",
+    "pages/face/face_login"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "MSE集体照识别",
+    "navigationBarTitleText": "人脸智能小程序",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

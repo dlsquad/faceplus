@@ -1,0 +1,11 @@
+<view class="create-box">
+    <view class="img-box" bindtap="showSheet">
+        <image class="" src="{{imgSrc}}" mode="aspectFit" lazy-load="false"></image>
+        <view class="upload-txt">点击上传图片</view>
+    </view>
+    <button class="{{imgData?'':'btn-fbd'}}">上传</button>
+    <view class="psw-box">
+        <text>集体照密码</text>
+        <view class="paw-word">fasdfsafs</view>
+    </view>
+</view>

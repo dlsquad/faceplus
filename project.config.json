@@ -14,8 +14,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
-	"appid": "wx3a73dc1c53297bb6",
-	"projectname": "miniprogram-test-2",
+	"appid": "wxf1b5c056a01e6df3",
+	"projectname": "face_recognition",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

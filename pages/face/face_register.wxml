@@ -5,15 +5,15 @@
   </view>
   <view class="btn_all">
       <view class='btn_open'>
-        <button bindtap="open" type="primary" data-type="takePhoto">检测人脸</button>
+        <button bindtap="open" type="primary" data-type="takePhoto">采集人脸</button>
       </view>
       <view class='btn_close'>
-        <button bindtap="close" type="primary" data-type="endPhoto">停止</button>
+        <button bindtap="register" type="primary" data-type="endPhoto">注册人脸</button>
       </view>    
   </view>
 
   <view class='face_pos'>
-    <text>人脸位置：{{x1}},{{y1}},{{x2}},{{y2}}</text>
+    <text>人脸注册结果：{{register_res}}</text>
   </view>
 
 </view>

@@ -1,4 +1,4 @@
-// pages/main/main.js
+// pages/face/face_recognition.js
 Page({
 
   /**
@@ -8,16 +8,6 @@ Page({
 
   },
 
-  go_face_detect:function() {
-    wx.navigateTo({
-      url: '/pages/face/ssd_detection',
-    })
-  },
-  go_face_recognition: function () {
-    wx.navigateTo({
-      url: '/pages/face/face_recognition',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -72,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  face_register: function () {
+    wx.navigateTo({
+      url: '/pages/face/face_register',
+    })
+  },
+  face_login: function () {
+    wx.navigateTo({
+      url: '/pages/face/face_login',
+    })
+  },
+
 })

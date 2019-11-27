@@ -1,8 +1,25 @@
 /**app.wxss**/
+
 .container {
-  height: 100%;
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-} 
+    height: 100%;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background: red;
+    color: #fff;
+}
+
+.btn-line {
+    background: #fff;
+    color: red;
+    border: 2rpx solid red;
+    box-sizing: border-box;
+}
+
+.btn-fbd {
+    background: rgba(255, 0, 0, .3);
+}

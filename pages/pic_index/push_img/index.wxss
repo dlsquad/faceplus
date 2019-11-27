@@ -1,0 +1,78 @@
+.create-box {
+    padding: 30rpx;
+}
+
+.img-box {
+    position: relative;
+    height: 400rpx;
+    padding: 20rpx 0;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    border: 2rpx solid #ccc;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.upload-txt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #666;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 650rpx;
+}
+
+button {
+    /* position: absolute;
+    bottom: 80rpx; */
+    width: 690rpx;
+    margin-top: 30rpx;
+}
+
+image {
+    height: 100%;
+}
+
+.name-input {
+    height: 80rpx;
+    margin-top: 20rpx;
+    line-height: 80rpx;
+    border: 2rpx solid #ccc;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.show-img {
+    position: relative;
+    margin-top: 30rpx;
+    border: 0;
+    background: #f4f4f4;
+}
+
+.show-img .default-img {
+    width: 200rpx;
+}
+
+.show-img .default-txt {
+    position: absolute;
+    bottom: 80rpx;
+    width: 100%;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.psi-txt {
+    margin-top: 80rpx;
+    font-size: 30rpx;
+}
+
+.psi-txt-item2 {
+    margin-top: 30rpx;
+}

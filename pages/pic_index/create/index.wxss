@@ -1,0 +1,51 @@
+.create-box {
+    padding: 30rpx;
+}
+
+.img-box {
+    position: relative;
+    height: 400rpx;
+    padding: 20rpx 0;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    border: 2rpx dotted #ccc;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.upload-txt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #666;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 650rpx;
+}
+
+button {
+    position: absolute;
+    bottom: 80rpx;
+    width: 690rpx;
+    margin-top: 30rpx;
+}
+
+image {
+    height: 100%;
+}
+
+.psw-box {
+    margin-top: 40rpx;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.paw-word {
+    margin-top: 20rpx;
+    font-size: 40rpx;
+    color: #159d40;
+}

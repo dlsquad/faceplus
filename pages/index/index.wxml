@@ -2,18 +2,34 @@
 
 <view class="container" style='width:100%; min-height:100%;'>
  <view class='title'>
-  <text>
-  本小程序
-  用于集体照对号入座智能识别</text>
+  <text>Python3+TensorFlow打造人脸识别智能小程序</text>
  </view>
 
+<view class="content">
+  <view class="real_num">
+    <view class='line1'>
+      <text>签到人数</text>
+    </view>
+    <view class='line2'>
+      <text>100人</text>
+    </view>
+  </view>
+  <view class="totle_num">
+    <view  class='line3'>
+      <text>应到人数</text>
+    </view>
+    <view  class='line4'>
+      <text>120人</text>
+    </view>
+  </view>
+</view>
 <view class="btn_start">
  <button bindtap='go_main' class='btn1'>
-    <view>开启体验</view>
+    <view>开启学习</view>
  </button>
 </view>
   <view class="usermotto">
-    <text class="user-motto">复旦大学MSE</text>
+    <text class="user-motto">{{motto}}</text>
   </view>  
 </view>
  
