@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
     data: {
-        isVisible: true
+        isVisible: false
     },
     goCreat() {
         wx.navigateTo({
