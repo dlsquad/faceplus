@@ -36,7 +36,7 @@ Page({
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`,
-                    name: this.data.name.length
+                    name: this.data.name
                 }
             }).then((res) => {
                 utils.hideLoading()
