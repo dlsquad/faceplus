@@ -13,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "人脸智能小程序",
+    "navigationBarTitleText": "集体照辅助小程序",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
