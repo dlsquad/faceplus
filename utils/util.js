@@ -70,9 +70,74 @@ export const getFileSystemManager = (filePath) => {
     })
 }
 
+/**
+ * @description: 图片编码
+ */
+var baseUrl = 'http://devff.thpot.com/api/'
+export const http = (config) => {
+    return new Promise((resolve, reject) => {
+        wx.request({
+            url: baseUrl + config.url,
+            data: config.data || {},
+            method: config.type || 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            // header: {}, // 设置请求的 header
+            success: function(res) {
+                resolve(res)
+            },
+            fail: function() {
+                reject()
+            },
+            complete: function() {
+                // complete
+            }
+        })
+    })
+}
+
+
+/**
+ * @description: 显示toast弹窗
+ * @param {String} content loading显示文字
+ */
+export const showToast = (content, time = 1500) => {
+    if (isShowLoading) hideLoading()
+    wx.showToast({
+        title: content,
+        icon: 'none',
+        mask: true,
+        duration: time
+    })
+}
+
+/**
+ * @description: 显示loading弹窗
+ * @param {String} title loading显示文字
+ */
+var isShowLoading = false
+export const showLoading = (title = '加载中...') => {
+    if (isShowLoading) return
+    isShowLoading = true
+    wx.showLoading({
+        title: title,
+        mask: true
+    })
+}
+
+/**
+ * @description: 隐藏loading弹窗
+ */
+export const hideLoading = () => {
+    isShowLoading = false
+    wx.hideLoading()
+}
+
 module.exports = {
     formatTime: formatTime,
     showActionSheet: showActionSheet,
     chooseImage: chooseImage,
-    getFileSystemManager: getFileSystemManager
+    getFileSystemManager: getFileSystemManager,
+    http: http,
+    showToast: showToast,
+    showLoading: showLoading,
+    hideLoading: hideLoading
 }
