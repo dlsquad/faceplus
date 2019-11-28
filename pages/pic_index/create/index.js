@@ -5,7 +5,8 @@ const utils = require('../../../utils/util.js')
 Page({
     data: {
         imgSrc: '../../../assets/image/bg.png',
-        imgData: null
+        imgData: null,
+        psw: null
     },
     showSheet() {
         const that = this
@@ -16,14 +17,31 @@ Page({
                     imgSrc: tempFilePaths[0],
                     imgData: res.data
                 })
-                that.postImg(res.data)
             })
         })
     },
-    postImg(data) {
-        if (this.imgData) {
-            // `data:image/png;base64,${data}`
-
+    uploadImg() {
+        if (this.data.imgData) {
+            utils.showLoading()
+            utils.http({
+                url: 'Values/UpLoad',
+                type: 'POST',
+                data: {
+                    pic: `data:image/png;base64,${this.data.imgData}`
+                }
+            }).then((res) => {
+                utils.hideLoading()
+                if (res.data.isSuccess) {
+                    this.setData({
+                        psw: res.data.data.code
+                    })
+                } else {
+                    utils.showToast(res.data.msg)
+                }
+            }).catch((err) => {
+                utils.hideLoading()
+                console.log('接口请求失败')
+            })
         }
     }
 })

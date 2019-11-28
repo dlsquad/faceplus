@@ -1,13 +1,13 @@
 <view class="create-box">
     <view class="img-box" bindtap="showSheet">
         <image class="" src="{{imgSrc}}" mode="aspectFit" lazy-load="false"></image>
-        <view class="upload-txt">点击上传图片</view>
+        <view class="upload-txt" wx:if="{{!imgData}}">点击上传图片</view>
     </view>
-    <input type="text" class="name-input" placeholder="请输入姓名" />
-    <button class="{{imgData?'':'btn-fbd'}}">标注</button>
-    <view class="psi-txt">位置：发射点发撒法</view>
+    <input type="text" class="name-input" placeholder="请输入姓名" bindinput="nameChange" />
+    <button class="{{imgData&&name.length>0?'':'btn-fbd'}}" bindtap="uploadImg">标注</button>
+    <view class="psi-txt">位置：{{pis?pis:'--'}}</view>
     <view class="img-box show-img">
-        <image class="default-img" src="{{showImg}}" mode="aspectFit" lazy-load="false"></image>
-        <view class="default-txt">图片标注后生成</view>
+        <image class="{{pis?'':'default-img'}}" src="{{showImg}}" mode="aspectFit" lazy-load="false"></image>
+        <view class="default-txt" wx:if="{{!pis}}">图片标注后生成</view>
     </view>
 </view>

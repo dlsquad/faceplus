@@ -6,7 +6,10 @@ Page({
     data: {
         imgSrc: '../../../assets/image/bg.png',
         imgData: null,
-        showImg: '../../../assets/image/default.png'
+        showImg: '../../../assets/image/default.png',
+        beforeImg: null,
+        afterImg: null,
+        name: ''
     },
     showSheet() {
         const that = this
@@ -17,14 +20,49 @@ Page({
                     imgSrc: tempFilePaths[0],
                     imgData: res.data
                 })
-                that.postImg(res.data)
             })
         })
     },
-    postImg(data) {
-        if (this.imgData) {
-            // `data:image/png;base64,${data}`
-
+    nameChange(e) {
+        this.setData({
+            name: e.detail.value
+        })
+    },
+    uploadImg() {
+        if (this.data.imgData && this.data.name.length > 0) {
+            utils.showLoading()
+            utils.http({
+                url: 'Values/UpLoad5',
+                type: 'POST',
+                data: {
+                    pic: `data:image/png;base64,${this.data.imgData}`,
+                    name: this.data.name.length
+                }
+            }).then((res) => {
+                utils.hideLoading()
+                if (res.data.isSuccess) {
+                    this.setData({
+                        afterImg: res.data.data.url
+                    })
+                } else {
+                    utils.showToast(res.data.msg)
+                }
+            }).catch((err) => {
+                utils.hideLoading()
+                console.log('接口请求失败')
+            })
         }
+    },
+    onLoad() {
+        utils.http({
+            url: 'Values/GetPic'
+        }).then((res) => {
+            this.setData({
+                beforeImg: res.data.data.url
+            })
+            console.log(this.data.beforeImg)
+        }).catch((err) => {
+            console.log('接口请求失败')
+        })
     }
 })
