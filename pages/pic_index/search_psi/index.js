@@ -8,8 +8,14 @@ Page({
         imgData: null,
         showImg: '../../../assets/image/default.png',
         pis: null,
-        name: ''
+        name: '',
+        code: ''
     },
+    onLoad(options) {
+        this.setData({
+            code: options.code,
+          })
+      },
     showSheet() {
         const that = this
         utils.chooseImage(1, ['compressed'], ['album', 'camera']).then((res) => {
@@ -35,7 +41,8 @@ Page({
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`,
-                    name: this.data.name
+                    name: this.data.name,
+                    code: this.data.code
                 }
             }).then((res) => {
                 utils.hideLoading()

@@ -62,12 +62,12 @@ Page({
     },
     goSearch() {
         wx.navigateTo({
-            url: '/pages/pic_index/search_psi/index'
+          url: '/pages/pic_index/search_psi/index?code=' + this.data.psw
         })
     },
     goPush() {
         wx.navigateTo({
-            url: '/pages/pic_index/push_img/index'
+          url: '/pages/pic_index/push_img/index?code=' + this.data.psw
         })
     }
 })
