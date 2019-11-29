@@ -9,7 +9,8 @@ Page({
         showImg: '../../../assets/image/default.png',
         beforeImg: null,
         afterImg: null,
-        name: ''
+        name: '',
+        code: ''
     },
     showSheet() {
         const that = this
@@ -36,7 +37,8 @@ Page({
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`,
-                    name: this.data.name
+                    name: this.data.name,
+                    code: this.data.code
                 }
             }).then((res) => {
                 utils.hideLoading()
@@ -53,11 +55,12 @@ Page({
             })
         }
     },
-    onLoad() {
+  onLoad(options) {
         utils.http({
             url: 'Values/GetPic'
         }).then((res) => {
             this.setData({
+                code: options.code,
                 beforeImg: res.data.data.url
             })
             console.log(this.data.beforeImg)
