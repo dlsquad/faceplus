@@ -4,11 +4,9 @@
     "pages/pic_index/push_img/index",
     "pages/pic_index/search_psi/index",
     "pages/pic_index/create/index",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/face/face_recognition",
-    "pages/face/face_register",
-    "pages/face/face_login"
+    "pages/face/face_register"
   ],
   "window": {
     "backgroundTextStyle": "light",
