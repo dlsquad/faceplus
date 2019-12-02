@@ -73,7 +73,7 @@ export const getFileSystemManager = (filePath) => {
 /**
  * @description: 图片编码
  */
-var baseUrl = 'http://devff.thpot.com/api/'
+var baseUrl = 'http://collhome.com:8888'
 export const http = (config) => {
     return new Promise((resolve, reject) => {
         wx.request({

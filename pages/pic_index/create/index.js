@@ -24,7 +24,7 @@ Page({
         if (this.data.imgData) {
             utils.showLoading()
             utils.http({
-                url: 'Values/UpLoad',
+                url: '/picture/post',
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`

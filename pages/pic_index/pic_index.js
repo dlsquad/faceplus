@@ -38,7 +38,7 @@ Page({
         if (this.data.psw.length > 0) {
             utils.showLoading()
             utils.http({
-                url: `Values/CheckCode/${this.data.psw}`
+                url: `/code/${this.data.psw}`
             }).then((res) => {
                 utils.hideLoading()
                 if (res.data.isSuccess && !res.data.msg) {

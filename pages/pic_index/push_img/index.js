@@ -33,7 +33,7 @@ Page({
         if (this.data.imgData && this.data.name.length > 0) {
             utils.showLoading()
             utils.http({
-                url: 'Values/UpLoad5',
+                url: '/user/generate',
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`,
@@ -57,7 +57,7 @@ Page({
     },
   onLoad(options) {
         utils.http({
-            url: 'Values/GetPic'
+          url: `/picture/${options.code}`
         }).then((res) => {
             this.setData({
                 code: options.code,

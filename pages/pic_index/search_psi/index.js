@@ -37,7 +37,7 @@ Page({
         if (this.data.imgData && this.data.name.length > 0) {
             utils.showLoading()
             utils.http({
-                url: 'Values/UpLoad3',
+                url: '/user/find',
                 type: 'POST',
                 data: {
                     pic: `data:image/png;base64,${this.data.imgData}`,
