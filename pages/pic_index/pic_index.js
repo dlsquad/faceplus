@@ -44,8 +44,10 @@ Page({
                 if (res.data.isSuccess && !res.data.msg) {
                     if (this.data.index === '1') {
                         this.goSearch()
-                    } else {
+                    } else if (this.data.index === '2') {
                         this.goPush()
+                    } else {
+                        this.goGetTable()
                     }
                     this.setData({
                         psw: '',
@@ -69,5 +71,10 @@ Page({
         wx.navigateTo({
           url: '/pages/pic_index/push_img/index?code=' + this.data.psw
         })
-    }
+    },
+    goGetTable() {
+        wx.navigateTo({
+          url: '/pages/pic_index/table/index?code=' + this.data.psw
+        })
+  }
 })
