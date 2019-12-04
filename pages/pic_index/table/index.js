@@ -12,7 +12,7 @@ Page({
   getPositionTable(options){
       utils.showLoading()
       utils.http({
-        url: `/code/${options.code}`
+        url: `/code/345686`
         // type: 'POST',
         // data: {
         //   code: this.data.code
@@ -28,7 +28,11 @@ Page({
               { "code": "04", "text": "text4", "type": "type4" },
               { "code": "05", "text": "text5", "type": "type5" },
               { "code": "06", "text": "text6", "type": "type6" },
-              { "code": "07", "text": "text7", "type": "type7" }
+              { "code": "07", "text": "text7", "type": "type7" },
+              { "code": "08", "text": "text4", "type": "type4" },
+              { "code": "09", "text": "text5", "type": "type5" },
+              { "code": "10", "text": "text6", "type": "type6" },
+              { "code": "11", "text": "text7", "type": "type7" }
             ]
           })
         } else {
