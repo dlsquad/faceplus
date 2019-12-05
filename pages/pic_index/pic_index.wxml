@@ -1,7 +1,7 @@
 <view>
     <button class="first-btn" bindtap="goCreat">创建团体照</button>
-    <button class="btn-line" bindtap="showDialog" data-index="1">我在团体照里</button>
-    <button class="btn-line" bindtap="showDialog" data-index="2">我不在团体照里</button>
+    <button class="btn-line" bindtap="showDialog" data-index="1">定位我的位置</button>
+    <!-- <button class="btn-line" bindtap="showDialog" data-index="2">我不在团体照里</button> -->
     <button class="btn-line" bindtap="showDialog" data-index="3">查看位置表格</button>
     <text class="b-code">V1.0</text>
     <view class="mask" wx:if="{{isVisible}}">

@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/pic_index/table/index",
-    
     "pages/pic_index/pic_index",
+    "pages/pic_index/table/index",
     "pages/pic_index/push_img/index",
     "pages/pic_index/search_psi/index",
     "pages/pic_index/create/index",

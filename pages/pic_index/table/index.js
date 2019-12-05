@@ -13,7 +13,7 @@ Page({
       let that = this;
       utils.showLoading()
       utils.http({
-        url: `/table/408648`
+        url: `/table/${options.code}`
         // type: 'POST',
         // data: {
         //   code: this.data.code
