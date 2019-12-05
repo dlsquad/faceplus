@@ -1,28 +1,18 @@
 <view class="table">
-<scroll-view scroll-x="true"  style="width: 80%">
-         
+
+  <scroll-view scroll-x="true" style="width: 100%">
+
+    <view wx:for="{{listData}}" wx:for-item="rowData" class="row">
+      <!-- {{rowData}} -->
+
+      <view  wx:for="{{rowData}}" wx:for-item="itemData" class="item">
+      {{itemData}}
+      </view>
+    </view>
+
+    
 
 
-  <view class="tr bg-w">
-
-     <block wx:for="{{listData}}" wx:key="text">
-
-      <view class="td">{{item.text}}</view>
-
-    </block>
-  </view>
-
-  <view class="tr">
-    <block wx:for="{{listData}}" wx:key="code">
-
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.type}}</view>
-      <view class="td">{{item.text}}</view>
-
-    </block>
-
-  </view>
-
-        </scroll-view>
+  </scroll-view>
 
 </view>
